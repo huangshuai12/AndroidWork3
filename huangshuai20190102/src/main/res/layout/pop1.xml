@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/image"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:src="@mipmap/ic_launcher"
+    />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        android:text="空格无限风,小米电视专属定制,全场麦克风,智能云因控制"
+        android:textColor="#ff0000"
+        android:textSize="30dp"
+        />
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:text="本产品有品第三方商品,有上海信息科技有限公司,发货并提供售后"
+        android:textSize="30dp"
+        />
+
+</android.support.constraint.ConstraintLayout>
