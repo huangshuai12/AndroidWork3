@@ -27,7 +27,6 @@ public class MyView extends View {
         mPaint = new Paint();
         mPaint.setColor(Color.RED);//设置画笔为红色
         mPaint.setAntiAlias(true);//抗锯齿
-//        mPaint.setStyle(Paint.Style.FILL);//实心
         mPaint.setStyle(Paint.Style.STROKE);//空心
         mPaint.setStrokeWidth(20);
     }
@@ -56,7 +55,6 @@ public class MyView extends View {
                 circleX = (int) event.getX();//获取距离父控件的x轴坐标
                 circleY = (int) event.getY();
                 invalidate();//重绘
-
                 break;
             case MotionEvent.ACTION_MOVE://滑动
                 circleX = (int) event.getX();
