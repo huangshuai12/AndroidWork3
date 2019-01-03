@@ -14,21 +14,22 @@ public class MyView extends View {
     private int circleY;//圆的y轴起始坐标
     private int mRaduis = 100;//圆半径，px
     public MyView(Context context) {
-     this(context,null);
+        this(context,null);
     }
     public MyView(Context context,  AttributeSet attrs) {
         this(context, attrs,0);
     }
+
     public MyView(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
     private  void init(){
         mPaint = new Paint();
-        mPaint.setColor(Color.RED);//设置画笔为红色
+        mPaint.setColor(Color.BLUE);
         mPaint.setAntiAlias(true);//抗锯齿
-        mPaint.setStyle(Paint.Style.STROKE);//空心
-        mPaint.setStrokeWidth(20);
+        mPaint.setStyle(Paint.Style.FILL);
+
     }
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -47,10 +48,12 @@ public class MyView extends View {
         super.onDraw(canvas);
         System.out.println("重绘："+"==============");
         canvas.drawCircle(circleX,circleY,mRaduis,mPaint);
+
+
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){//动作行为
+        switch (event.getAction()){
             case MotionEvent.ACTION_DOWN://按下
                 circleX = (int) event.getX();//获取距离父控件的x轴坐标
                 circleY = (int) event.getY();
@@ -59,14 +62,9 @@ public class MyView extends View {
             case MotionEvent.ACTION_MOVE://滑动
                 circleX = (int) event.getX();
                 circleY = (int) event.getY();
-
                 invalidate();
-
                 break;
             case MotionEvent.ACTION_UP://抬起
-
-
-
                 break;
         }
         return true;
